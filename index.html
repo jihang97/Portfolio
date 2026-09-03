@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이지항 | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        header .contact {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        header .contact a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        /* Timeline / List Items */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card-period {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Bullet lists */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>이지항</h1>
+            <p class="contact">Email: <a href="mailto:syclub7978@gmail.com">syclub7978@gmail.com</a></p>
+        </header>
+
+        <section>
+            <h2 class="section-title">학력</h2>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">유한대학교</span>
+                    <span class="card-period">2024.03 ~ 현재</span>
+                </div>
+                <p class="card-subtitle">컴퓨터 공학과 게임콘텐츠 전공</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">광영고등학교</span>
+                    <span class="card-period">2021.03 ~ 2024.02</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">경력</h2>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">크래프톤</span>
+                    <span class="card-period">2026.03 ~ 2026.03</span>
+                </div>
+                <p class="card-subtitle">단기 알바 QA</p>
+                <ul>
+                    <li>아직 미출시된 모드 테스트 수행</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">프로젝트 경험</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">re-port</span>
+                    <span class="card-period">2026.03 ~ 2026.06</span>
+                </div>
+                <p class="card-subtitle">구분: 버그 리포트 / 결함 관리 | 역할: QA 담당</p>
+                <div class="badge-group">
+                    <span class="badge">Unity</span>
+                    <span class="badge">C#</span>
+                    <span class="badge">슈퍼스레드</span>
+                    <span class="badge">GitHub</span>
+                    <span class="badge">Gemini</span>
+                </div>
+                <ul>
+                    <li>게임의 결함 및 버그 발견</li>
+                    <li>슈퍼스레드를 활용한 버그 리포트 문서 작업</li>
+                    <li>발견된 버그 수치화 관리</li>
+                    <li>개발 과정 내 오류 수정 지원</li>
+                    <li>게임 디자이너와 UI 배치 회의 진행</li>
+                    <li>게임 시나리오 및 스토리 구축</li>
+                    <li>상업적 활용 가능한 배경음 및 알림음 발굴</li>
+                    <li>각 챕터별 노드 문서 정리</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">빌딩 워즈</span>
+                    <span class="card-period">2025.08 ~ 2025.12</span>
+                </div>
+                <p class="card-subtitle">구분: 기획 / 문서 | 역할: 기획 및 QA</p>
+                <div class="badge-group">
+                    <span class="badge">Figma</span>
+                    <span class="badge">NotebookLM</span>
+                    <span class="badge">Gemini</span>
+                </div>
+                <ul>
+                    <li>보드게임 핵심 정보 및 시스템 기획</li>
+                    <li>보드게임 내 오류 및 결함 전수 검증</li>
+                    <li>카드별 특성 고려를 통한 밸런스 붕괴 방지</li>
+                    <li>보드게임 기초 세계관 설계</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">체스 보스 레이드</span>
+                    <span class="card-period">2025.03 ~ 2025.06</span>
+                </div>
+                <p class="card-subtitle">구분: 기능 개발 | 역할: 테크니컬 아티스트</p>
+                <div class="badge-group">
+                    <span class="badge">Unity</span>
+                    <span class="badge">C#</span>
+                    <span class="badge">Gemini</span>
+                </div>
+                <ul>
+                    <li>보스 레이저 공격 패턴 1건 구현 및 추가</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">과제를 완성해라</span>
+                    <span class="card-period">2025.03 ~ 2025.06</span>
+                </div>
+                <p class="card-subtitle">구분: 기타 | 역할: 1인 개발</p>
+                <div class="badge-group">
+                    <span class="badge">Unity</span>
+                    <span class="badge">C#</span>
+                </div>
+                <ul>
+                    <li>슈팅 게임 핵심 메커니즘 개발 및 구현</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 이지항. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
