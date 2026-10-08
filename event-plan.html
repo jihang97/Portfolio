@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 이벤트 기획서 | 이지항</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px 0; }
+        .back { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; }
+        header { padding: 30px 0 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+        header h1 { font-size: 2rem; color: var(--accent-color); margin-bottom: 8px; }
+        header .meta { color: var(--text-muted); font-size: 0.9rem; }
+        section { margin-bottom: 36px; }
+        h2 { font-size: 1.4rem; color: var(--accent-color); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        h2::after { content: ''; flex: 1; height: 1px; background-color: var(--border-color); }
+        p { color: #cbd5e1; margin-bottom: 12px; font-size: 0.97rem; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+        .card strong { color: var(--text-color); }
+        .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+        ul { list-style: none; }
+        ul li { position: relative; padding-left: 20px; margin-bottom: 8px; color: #cbd5e1; font-size: 0.95rem; }
+        ul li::before { content: "•"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-bottom: 12px; }
+        th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-color); color: #cbd5e1; vertical-align: top; }
+        th { color: var(--accent-color); font-weight: 600; background-color: var(--card-bg); }
+        .notice { background-color: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 12px 16px; color: #cbd5e1; font-size: 0.88rem; margin-bottom: 30px; }
+        footer { text-align: center; padding: 20px 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        @media (max-width: 600px) { table { font-size: 0.85rem; } th, td { padding: 8px 6px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a class="back" href="index.html">← 포트폴리오로 돌아가기</a>
+
+    <header>
+        <h1>게임 이벤트 기획서</h1>
+        <p class="meta">방치형 RPG 「N주년 기념 대규모 보상 이벤트」 · 작성 이지항 · 시장 분석 결과를 바탕으로 한 가안</p>
+    </header>
+
+    <div class="notice">
+        가상의 방치형 RPG를 가정해 작성한 기획서입니다. 수치(기간, 지급량, 목표)는 설계 예시이며, 실제 게임의 데이터가 아닙니다.
+    </div>
+
+    <section>
+        <h2>1. 기획 배경</h2>
+        <ul>
+            <li><a href="market-analysis.html" style="color:var(--accent-color)">시장 분석</a>에서 600~777뽑기 같은 대규모 재화 지급 이벤트를 진행한 게임이 짧은 기간에 순위를 크게 올린 사례를 확인했다. (트릭컬 리바이브 36위 → 6위)</li>
+            <li>게임 내부 요인은 <a href="trickcal-analysis.html" style="color:var(--accent-color)">트릭컬 리바이브 재미요소 분석</a>에서 정리했다. 600뽑은 비주얼·스토리·덱 빌딩이라는 재미요소에 유저가 빠르게 접근하도록 돕는 장치였다.</li>
+            <li>방치형 장르는 중상위권에 두터운 층을 형성하고 있고, 가벼운 플레이와 높은 보상감이 유저 성향과 맞는다.</li>
+            <li>순위 상승이 일회성에 그치지 않으려면 이벤트 종료 후에도 남을 이유(리텐션)가 필요하다.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. 목표</h2>
+        <table>
+            <tr><th>구분</th><th>목표</th><th>측정 지표</th></tr>
+            <tr><td>신규 유입</td><td>이벤트 기간 신규 설치 증가</td><td>일별 신규 설치(NRU)</td></tr>
+            <tr><td>복귀 유저</td><td>휴면 유저 재접속 유도</td><td>복귀 유저 수, 복귀 후 7일 접속률</td></tr>
+            <tr><td>매출</td><td>이벤트 패키지로 과금 전환 유도</td><td>결제 전환율, ARPPU</td></tr>
+            <tr><td>리텐션</td><td>이벤트 종료 후 이탈 최소화</td><td>D7·D14 리텐션, 종료 후 DAU 유지율</td></tr>
+        </table>
+        <p>구체적인 목표 수치는 이벤트 직전 4주 평균을 기준선으로 잡아 설정한다.</p>
+    </section>
+
+    <section>
+        <h2>3. 이벤트 개요</h2>
+        <div class="card">
+            <ul>
+                <li><strong>이벤트명</strong>: N주년 감사 축제</li>
+                <li><strong>기간</strong>: 14일 (주년 당일부터 2주)</li>
+                <li><strong>대상</strong>: 전체 유저 (신규·기존·복귀)</li>
+                <li><strong>핵심 콘셉트</strong>: 누구나 접속만 해도 대규모 뽑기를 받는 ‘접속 중심 이벤트’</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. 이벤트 구성</h2>
+        <div class="card">
+            <h3>① 출석 누적 보상</h3>
+            <ul>
+                <li>14일 동안 접속할 때마다 뽑기 재화를 지급하고, 최종 누적 지급량이 600뽑기 분량이 되도록 설계한다.</li>
+                <li>3일·7일·14일 단계에 마일스톤 보상(영웅 확정권 등)을 둔다.</li>
+                <li>하루를 놓쳐도 보상을 받을 수 있게 소급 수령 기능을 둔다. (방치형의 가벼운 접근성 유지)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>② 기념 미션</h3>
+            <ul>
+                <li>스테이지 진행, 장비 강화처럼 평소 플레이를 하면 달성되는 미션으로 추가 보상을 제공한다.</li>
+                <li>신규 유저에게는 튜토리얼과 초반 성장을 이끄는 미션 라인을 별도로 제공한다.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>③ 복귀 유저 보너스</h3>
+            <ul>
+                <li>30일 이상 미접속한 유저가 이벤트 기간에 접속하면 추가 뽑기와 성장 지원 아이템을 지급한다.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>④ 기념 패키지 (유료)</h3>
+            <ul>
+                <li>이벤트 기간 한정 구매 패키지를 2~3단계 가격대로 구성한다.</li>
+                <li>무과금 보상만으로도 이벤트를 완주할 수 있게 하고, 패키지는 성장 속도를 높이는 선택지로 둔다.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. 운영 일정</h2>
+        <table>
+            <tr><th>시점</th><th>내용</th></tr>
+            <tr><td>D-14 ~ D-7</td><td>기획 확정, 보상 테이블 밸런스 검토</td></tr>
+            <tr><td>D-7 ~ D-3</td><td>구현 완료, QA 1차 (기능·보상 지급)</td></tr>
+            <tr><td>D-3 ~ D-1</td><td>QA 2차 (결제·복귀 유저 케이스), 사전 공지·스토어 배너</td></tr>
+            <tr><td>D-Day ~ D+14</td><td>이벤트 진행, 지표 일별 모니터링</td></tr>
+            <tr><td>D+15 ~ D+28</td><td>종료 후 리텐션 분석, 결과 보고</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>6. 리스크와 대응</h2>
+        <table>
+            <tr><th>리스크</th><th>대응</th></tr>
+            <tr><td>재화 인플레이션 (대량 지급으로 장기 밸런스 붕괴)</td><td>지급 재화를 이벤트 전용 뽑기권으로 분리하고, 성장 재화는 상한을 둔다</td></tr>
+            <tr><td>이벤트 종료 후 유저 이탈</td><td>종료 직전 후속 콘텐츠를 예고하고, 이벤트 마지막 보상으로 다음 업데이트 접속 이유를 만든다</td></tr>
+            <tr><td>기존 과금 유저의 상대적 박탈감</td><td>기념 패키지·한정 외형 같은 과금 유저 전용 혜택을 별도로 둔다</td></tr>
+            <tr><td>접속 폭주로 인한 서버 불안정</td><td>사전 부하 테스트, 보상 일괄 지급 방식 사용</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>7. QA 체크리스트</h2>
+        <ul>
+            <li>출석 보상이 날짜별로 정확히 지급되는지, 자정 경계와 시간대 변경 시 중복·누락이 없는지</li>
+            <li>소급 수령 시 보상 중복 지급이 발생하지 않는지</li>
+            <li>신규·기존·복귀 유저 각각의 대상 조건이 올바르게 판정되는지</li>
+            <li>누적 보상 합계가 기획된 수치(600뽑기 분량)와 일치하는지</li>
+            <li>패키지 결제 후 아이템 지급, 결제 실패·환불 시 처리</li>
+            <li>이벤트 종료 시점에 미수령 보상과 이벤트 전용 재화가 의도한 대로 처리되는지</li>
+            <li>다양한 기기와 해상도에서 이벤트 UI가 깨지지 않는지</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>8. 결과 평가 방법</h2>
+        <ul>
+            <li>이벤트 전 4주 평균과 이벤트 기간·종료 후 2주를 비교한다. (신규 설치, DAU, 결제 전환율, 매출)</li>
+            <li>스토어 매출 순위 변화를 보조 지표로 참고하되, 순위만으로 효과를 판단하지 않고 내부 지표와 함께 해석한다.</li>
+            <li>복귀 유저의 D7·D14 리텐션으로 이벤트가 일회성 접속에 그쳤는지 판단한다.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2026 이지항. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
