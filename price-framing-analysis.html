@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가격 프레이밍 분석: 상점 해부하기 | 이지항</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px 0; }
+        .back { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; }
+        a { color: var(--accent-color); }
+        header { padding: 30px 0 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+        header h1 { font-size: 2rem; color: var(--accent-color); margin-bottom: 8px; }
+        header .meta { color: var(--text-muted); font-size: 0.9rem; }
+        section { margin-bottom: 36px; }
+        h2 { font-size: 1.4rem; color: var(--accent-color); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        h2::after { content: ''; flex: 1; height: 1px; background-color: var(--border-color); }
+        p { color: #cbd5e1; margin-bottom: 12px; font-size: 0.97rem; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+        strong { color: var(--text-color); }
+        ul { list-style: none; }
+        ul li { position: relative; padding-left: 20px; margin-bottom: 8px; color: #cbd5e1; font-size: 0.95rem; }
+        ul li::before { content: "•"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-bottom: 12px; }
+        th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-color); color: #cbd5e1; vertical-align: top; }
+        th { color: var(--accent-color); font-weight: 600; background-color: var(--card-bg); }
+        td:first-child { color: var(--text-color); white-space: nowrap; }
+        figure { margin: 4px 0 16px 0; }
+        figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px; }
+        figcaption { color: var(--text-muted); font-size: 0.85rem; margin-top: 8px; }
+        .note { color: var(--text-muted); font-size: 0.85rem; }
+        footer { text-align: center; padding: 20px 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        @media (max-width: 600px) { table { font-size: 0.85rem; } th, td { padding: 8px 6px; } td:first-child { white-space: normal; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a class="back" href="index.html">← 포트폴리오로 돌아가기</a>
+
+    <header>
+        <h1>가격 프레이밍 분석: 상점 해부하기</h1>
+        <p class="meta">명조 패키지 상점 화면 기준 · 분석 기준일 2026.10.09 · 작성 이지항</p>
+    </header>
+
+    <section>
+        <h2>결론</h2>
+        <div class="card">
+            <p>명조 패키지 상점의 혜택 코너는 <strong>가격을 깎아 보이는 대신, 받는 양을 늘려 보이게 하는 방식</strong>으로 가격을 프레이밍한다. 가격 프레이밍의 8가지 기법 중 <strong>더 주기, 무료·보너스, 손실 프레임</strong>이 화면에서 확인되었고, 구매 제한 표시가 이를 보완한다.</p>
+            <p style="margin-bottom:0">정가에 취소선을 긋는 앵커 가격 방식은 쓰이지 않았다. 대신 상품마다 +% 배지를 붙여 기준점 역할을 대신하는 것으로 보인다. 기준이 무엇인지는 화면에 나오지 않는다.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. 분석 대상</h2>
+        <p>명조의 패키지 상점 중 혜택 코너 화면 한 장을 대상으로 했다. 상품 7종이 있고, 가격은 5,900원부터 37,000원까지다.</p>
+        <figure>
+            <img src="images/wuwa-shop.jpg" alt="명조 패키지 상점 혜택 코너 화면: 상품별 +% 배지, 증정 배지, 남은 시간, 구매 제한이 표시된 카드 목록" loading="lazy">
+            <figcaption>명조 패키지 상점 (혜택 코너)</figcaption>
+        </figure>
+        <p class="note">분석 방법: 8가지 가격 프레이밍 기법 중 어떤 것이 쓰였는지를 화면에 보이는 요소만으로 찾고, 근거와 함께 표시했다.</p>
+    </section>
+
+    <section>
+        <h2>2. 확인된 기법</h2>
+        <table>
+            <tr><th>기법</th><th>화면에서 확인된 것</th><th>해석</th></tr>
+            <tr><td>더 주기</td><td>카드마다 +64% ~ +200% 배지</td><td>가격을 낮추는 대신 받는 양이 늘어난다는 방식으로 표시한다.</td></tr>
+            <tr><td>무료·보너스</td><td>증정 68 · 128 · 198 배지 (재화 아이콘 표시)</td><td>기본 상품에 덤이 더해지는 것처럼 보이게 한다.</td></tr>
+            <tr><td>손실 프레임</td><td>5개 카드의 "12일 14시간" 타이머, 상단 배너의 "남은 시간: 32일 16시간"</td><td>기간이 끝나면 살 수 없다는 점을 계속 보이게 한다.</td></tr>
+            <tr><td>구매 제한 (관련 요소)</td><td>"구매 제한: 1/1", "월간 구매 제한: 1/1"</td><td>한 번만 살 수 있다는 표시가 지금 구매해야 한다는 인상을 더한다. 8가지 기법 목록에는 없는 관련 요소다.</td></tr>
+        </table>
+        <p>월간 상품 2종(25,000원, 5,900원)은 타이머 대신 월간 구매 제한이 표시된다.</p>
+    </section>
+
+    <section>
+        <h2>3. 부분적으로만 보이거나 쓰이지 않은 것</h2>
+        <div class="card">
+            <p><strong>부분적으로 보이는 것 (판단 유보)</strong></p>
+            <ul>
+                <li><strong>앵커링</strong>: 가장 싼 5,900원 상품이 +200%로 가장 크게 표시되어 눈에 띈다. 다만 목록의 맨 위가 아니라 맨 아래에 있어 앵커링으로 단정하기 어렵다.</li>
+                <li><strong>% vs 금액</strong>: 가격이 3만 원대 이하의 저가라서 %를 쓰는 것이 일반적인 경험칙에 맞다. 다만 +%의 기준이 화면에 나오지 않는다.</li>
+                <li><strong>끝자리 가격</strong>: 5,900원만 해당하고, 12,000원 · 25,000원 · 37,000원은 해당하지 않는다.</li>
+                <li><strong>미끼 효과</strong>: 37,000원 상품은 증정이 198로 가장 많지만 +46%로 가장 낮다. 가격이 높을수록 +%가 커지는 구조는 아니다. 미끼 구조인지는 상품 내용을 더 확인해야 알 수 있다.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <p><strong>쓰이지 않은 것으로 보이는 것</strong></p>
+            <ul>
+                <li><strong>앵커 가격 (취소선)</strong>: 정가에 취소선을 긋고 할인가를 옆에 두는 표시가 없다.</li>
+                <li><strong>쪼개기</strong>: "하루 ○○원" 같은 환산 표기가 없다.</li>
+                <li><strong>심적 회계</strong>: 가격은 원화(KRW)로 직접 표시된다. 다만 증정 수량은 게임 재화 단위라, 재화가 현금처럼 느껴지지 않게 하는 효과는 보너스 쪽에 있다.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. 윤리적 장치</h2>
+        <p>가격 프레이밍은 사실을 보여주는 방식을 바꾸는 것이지 사실을 바꾸는 것이 아니다. 이 화면에서는 다음 요소가 확인되었다.</p>
+        <ul>
+            <li><strong>소비 권장 안내</strong>: 화면 하단에 "적당한 게임 플레이와 합리적인 소비를 권장합니다" 문구가 있다.</li>
+            <li><strong>상품 정보 제공 버튼</strong>: 화면 왼쪽 아래에 상품 정보를 볼 수 있는 버튼이 있다.</li>
+            <li><strong>가격과 구매 제한의 명시</strong>: 각 카드에 원화 가격과 구매 제한이 그대로 표시된다.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. 분석의 한계</h2>
+        <ul>
+            <li>화면 한 장만 분석했기 때문에 다른 상점 화면(첫 충전, 월정액, 재화 충전 등)의 기법은 다루지 못했다.</li>
+            <li>기법과 화면 요소의 연결은 해석이며, 실제 설계 의도나 매출에 미친 효과는 확인하지 못했다.</li>
+            <li>타이머가 실제로 끝나는지, 끝난 뒤 같은 상품이 다시 나오는지는 한 장의 화면으로는 알 수 없다.</li>
+            <li>+%의 계산 기준이 화면에 없어, 실제로 얼마나 더 받는 것인지는 확인하지 못했다.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2026 이지항. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
