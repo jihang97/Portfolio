@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>니케 매출 순위 상승 원인 분석 | 이지항</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg-color: #f7f5f0;
+            --card-bg: #ffffff;
+            --accent-color: #4338ca;
+            --accent-soft: rgba(67, 56, 202, 0.08);
+            --accent-line: rgba(67, 56, 202, 0.22);
+            --text-color: #1a1a1a;
+            --text-body: #3d3d3a;
+            --text-muted: #6b6b66;
+            --border-color: #e4e0d6;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0e0f13;
+                --card-bg: #16181f;
+                --accent-color: #a5b4fc;
+                --accent-soft: rgba(165, 180, 252, 0.1);
+                --accent-line: rgba(165, 180, 252, 0.3);
+                --text-color: #ecebe6;
+                --text-body: #c9c8c2;
+                --text-muted: #9a9a93;
+                --border-color: #2c2f3a;
+            }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px 0; }
+        .back { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; }
+        a { color: var(--accent-color); }
+        header { padding: 30px 0 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+        header h1 { font-size: 2rem; color: var(--accent-color); margin-bottom: 8px; }
+        header .meta { color: var(--text-muted); font-size: 0.9rem; }
+        section { margin-bottom: 36px; }
+        h2 { font-size: 1.4rem; color: var(--accent-color); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        h2::after { content: ''; flex: 1; height: 1px; background-color: var(--border-color); }
+        p { color: var(--text-body); margin-bottom: 12px; font-size: 0.97rem; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+        strong { color: var(--text-color); }
+        ul { list-style: none; }
+        ul li { position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-body); font-size: 0.95rem; }
+        ul li::before { content: "•"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-bottom: 12px; }
+        th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-color); color: var(--text-body); vertical-align: top; }
+        th { color: var(--accent-color); font-weight: 600; background-color: var(--card-bg); }
+        .note { color: var(--text-muted); font-size: 0.85rem; }
+        .sources li { font-size: 0.88rem; word-break: break-all; }
+        footer { text-align: center; padding: 20px 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        @media (max-width: 600px) { table { font-size: 0.85rem; } th, td { padding: 8px 6px; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a class="back" href="index.html">← 포트폴리오로 돌아가기</a>
+
+    <header>
+        <h1>《승리의 여신: 니케》 매출 순위 상승 원인 분석</h1>
+        <p class="meta">구글 플레이 스토어 매출 순위 기준 · 10.29 35위 → 11.05 5위 · 분석 기준일 2026.11.05 · 작성 이지항</p>
+    </header>
+
+    <section>
+        <h2>결론</h2>
+        <div class="card">
+            <p>《니케》의 순위 상승은 <strong>10월 29일 4주년 업데이트가 ‘스토리 완결 + 신규 핵심 캐릭터 + 무료 모집’을 한꺼번에 내놓았고, 그 직후 11월 5일 신규 캐릭터 ‘홍련: 신살’ 공개가 이어지며 상승한 순위를 유지시킨 결과</strong>로 해석된다.</p>
+            <p style="margin-bottom:0">이 사례는 ‘대량 재화 지급’이 아니라 <strong>서사 콘텐츠로 복귀 유저를 부르고, 신규 캐릭터로 과금 동기를 만든 유형</strong>이다. 재화 지급은 진입 장벽을 낮추는 보조 장치로 쓰였다.</p>
+        </div>
+        <p>같은 구글 플레이 매출 순위 기준의 시장 분석은 <a href="market-analysis.html">모바일 게임 시장 트렌드 분석</a>에서 볼 수 있다.</p>
+    </section>
+
+    <section>
+        <h2>1. 순위 변화와 확인된 수치</h2>
+        <p>10월 29일(35위)과 11월 5일(5위)의 순위는 작성자가 직접 확인한 구글 플레이 매출 순위이다. 그 사이 시점은 언론이 모바일인덱스 데이터를 인용한 수치로 보충했다. 기사마다 집계 시점·스토어·국가가 달라 서로 단순 비교는 하지 않았다.</p>
+        <table>
+            <tr><th>시점</th><th>확인된 순위</th><th>출처 구분</th></tr>
+            <tr><td>10.29 (업데이트 당일)</td><td>구글 플레이 35위<br>한국 앱스토어 1위</td><td>작성자 확인<br>언론 보도 (애플 앱스토어)</td></tr>
+            <tr><td>10.30 오전</td><td>한국 구글 6위<br>한국·대만 앱스토어 1위</td><td>언론 보도</td></tr>
+            <tr><td>10.26~11.01 주간</td><td>구글 플레이 4위<br>(국가 표기 없음)</td><td>언론 보도 (주간 순위)</td></tr>
+            <tr><td>11.02</td><td>한국 구글 3위 · 일본 구글 1위 · 대만 구글 5위</td><td>언론 보도</td></tr>
+            <tr><td>11.05</td><td>구글 플레이 5위</td><td>작성자 확인</td></tr>
+        </table>
+        <ul>
+            <li><strong>구글 플레이가 앱스토어보다 늦게 반응했다</strong>: 업데이트 당일 앱스토어는 한국 1위였지만 구글 플레이는 35위였다. 이틀 뒤인 11월 2일 한국 구글 3위까지 올랐다. 앱스토어에서 먼저 매출이 몰렸고, 구글 플레이가 뒤따라 오른 흐름으로 보인다.</li>
+            <li><strong>순위는 3위까지 올랐다가 5위로 내려왔다</strong>: 11월 2일 3위, 11월 5일 5위로 소폭 내려왔다. 상승 직후의 정점은 지났지만 상위권은 유지하고 있다.</li>
+            <li><strong>이용 지표도 함께 올랐다</strong>: 모바일인덱스 기준 업데이트 이후 국내 주간 이용자 수가 전주 대비 6.7% 늘었고, 10월 마지막 주 주간 매출 순위는 전주보다 37계단 올랐다고 보도되었다.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. 상승 원인</h2>
+
+        <div class="card">
+            <p><strong>① 4주년 업데이트: 스토리 한 단락의 완결</strong></p>
+            <ul>
+                <li>메인 스토리 49·50챕터 추가로 방주 이야기가 한 단락 마무리된다. 오래 플레이한 유저일수록 결말을 보려는 동기가 커서, 휴면 유저의 복귀 계기가 된다.</li>
+                <li>마리안의 과거를 다룬 풀 보이스 스토리 이벤트 ‘MARIA-n’이 함께 열렸다. 게임 전문 매체는 이 스토리의 분량과 몰입감이 이번 순위 상승의 핵심 동력이라고 평가했다.</li>
+                <li>지난해 3주년에도 ‘GODDESS FALL’ 이벤트로 국내 앱스토어 1위에 올랐다. 주년 업데이트를 서사의 전환점으로 쓰는 방식이 이번에도 반복되었다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <p><strong>② 신규 핵심 캐릭터: 과금 동기</strong></p>
+            <ul>
+                <li>스토리의 중심 인물인 ‘마리안: 퀸’이 신규 SSR 필그림 니케로 등장했다. 스토리를 본 유저가 그 인물을 직접 얻고 싶어지는 구조로, 서사와 모집(가챠)이 연결된다.</li>
+                <li>‘라푼젤: 생츄어리’도 함께 추가되었고, 한정 코스튬 4종이 나왔다.</li>
+                <li>11월 5일에는 ‘홍련: 신살’이 특수 모집에 추가되었다. 업데이트 이후에도 새 캐릭터가 이어지므로 과금 수요가 한 번에 꺼지지 않는다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <p><strong>③ 무료 모집과 지급 이벤트: 복귀 유저의 진입 장벽 완화</strong></p>
+            <ul>
+                <li>신규 니케 특수 모집과 필그림 선택 모집에서 각각 매일 1회 무료 모집 기회를 준다.</li>
+                <li>‘라푼젤: 생츄어리’는 스토리 이벤트와 로그인 등을 통해 11월 19일까지 무료로 얻을 수 있다. ‘MARIA-n’ 업적 미션을 완료하면 ‘4주년 배포 니케 선택 상자’도 받는다.</li>
+                <li>성장 지원 시스템 ‘싱크로 부스트’가 도입되어, 오래 쉰 유저도 성장 격차를 빠르게 줄일 수 있다.</li>
+                <li>대량 지급은 아니지만, 복귀 유저가 부담 없이 접속할 이유를 만들고, 접속한 유저에게 신규 캐릭터 과금을 권하는 설계로 볼 수 있다.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <p><strong>④ 글로벌 마케팅과 오프라인 캠페인</strong></p>
+            <ul>
+                <li>서비스사(레벨 인피니트)는 도쿄 지하철역 옥외광고, 서울 용산 아이파크몰 ‘MARIAN: WHITE &amp; BLACK’ 행사(10.30~11.01), 뉴욕 타임스퀘어 광고 등 세계 도심 캠페인을 진행했다.</li>
+                <li>11월 6일에는 무신사 협업 팝업스토어가 예정되어 있다.</li>
+                <li>다만 기사들은 이 캠페인을 매출 상승의 원인으로 명시하지 않았다. 서사 전환점과 신규 캐릭터가 관심을 이끌었다는 것이 서비스사의 설명이다. 오프라인 캠페인은 주목도를 높이는 보조 요인 정도로 보는 것이 안전하다.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 시사점</h2>
+        <div class="card">
+            <ul>
+                <li><strong>업데이트 직후 단일 이벤트가 아니라 일정으로 설계한다</strong>: 10.29 업데이트 → 10.30~11.01 오프라인 행사 → 11.05 신규 캐릭터 → 11.06 팝업 → 11.19 무료 획득 종료로 이어지는 연속 일정이 상승 이후의 순위를 받치는 구조이다.</li>
+                <li><strong>복귀 유저에게는 접속할 이유와 쓸 이유를 따로 준다</strong>: 무료 모집은 접속 이유, 신규 핵심 캐릭터는 지출 이유로 역할이 나뉜다.</li>
+                <li><strong>QA 관점</strong>: 대형 업데이트 직후에는 스토리 진행 조건, 무료 모집 횟수 초기화, 기간 한정 지급 상품의 종료 시점 같은 부분이 오류 위험이 크다. 기획서의 QA 체크리스트(<a href="event-plan.html">게임 이벤트 기획서</a>)에 이 항목들을 반영할 수 있다.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. 분석의 한계</h2>
+        <ul>
+            <li><strong>인과관계는 추정이다</strong>: 업데이트와 순위 상승은 같은 시기에 일어났지만, 어떤 요인이 얼마나 기여했는지는 구분하지 못했다. 위의 4가지 원인도 기사와 공개된 업데이트 내용에 근거한 해석이다.</li>
+            <li><strong>순위 출처가 섞여 있다</strong>: 35위와 5위는 작성자 확인 수치이고, 나머지는 기사 인용이다. 기사 간 스토어·국가·집계 기간이 달라 직접 비교하지 않았다. 주간 4위 기사는 국가 표기가 없다.</li>
+            <li><strong>순위는 매출액이 아니다</strong>: 어느 기사에도 매출액이나 신규·복귀 유저 수는 없어서, 순위가 얼마나 큰 매출 변화를 뜻하는지 알 수 없다.</li>
+            <li><strong>지속 여부는 아직 모른다</strong>: 11월 5일 기준 5위는 3위에서 내려온 상태이다. 무료 모집과 지급 이벤트가 끝난 뒤(11월 19일 이후)에도 순위가 유지되는지 후속 확인이 필요하다.</li>
+            <li><strong>구글 플레이와 앱스토어의 시차</strong>: 업데이트 당일 구글 플레이 35위와 앱스토어 1위의 차이가 왜 생겼는지는 근거가 없어 설명하지 않았다.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>참고 자료</h2>
+        <ul class="sources">
+            <li><a href="https://zdnet.co.kr/view/?no=20261102094333">ZDNet Korea, ‘승리의 여신: 니케’, 4주년 효과로 매출 순위 급등 (2026.11.02)</a></li>
+            <li><a href="https://zdnet.co.kr/view/?no=20261029174322">ZDNet Korea, ‘승리의 여신: 니케’, 4주년 업데이트 직후 국내 앱스토어 매출 1위 기록 (2026.10.29)</a></li>
+            <li><a href="https://www.betanews.net/article/view/beta202611020005">베타뉴스, [주간 모바일 순위] 4주년 승리의 여신: 니케 (2026.11.02)</a></li>
+            <li><a href="https://www.gamevu.co.kr/news/articleView.html?idxno=61965">게임뷰, 4주년 맞은 ‘니케’ 글로벌 매출 역주행, 비결은 탄탄한 스토리 (2026.11.03)</a></li>
+            <li><a href="https://www.gametoc.co.kr/news/articleView.html?idxno=112622">게임톡, [니케] 스토리만 봐도 매출 오를 만하네 (2026.10.30)</a></li>
+            <li><a href="https://www.inven.co.kr/webzine/news/?news=322864">인벤, 승리의 여신: 니케, 세계 도심서 4주년 축제 (2026.11.02)</a></li>
+            <li><a href="https://www.inven.co.kr/webzine/news/?news=311086">인벤, ‘승리의 여신: 니케’, 업데이트로 매출 상승세 (2025.11.07, 3주년 비교용)</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2026 이지항. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
