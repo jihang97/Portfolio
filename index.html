@@ -279,6 +279,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="job.css">
 </head>
 <body>
 
@@ -287,9 +288,15 @@
             <header>
                 <h1>이지항</h1>
                 <p class="tagline">시간을 아끼지 않고 끝까지 검증하는 QA가 되겠습니다</p>
-                <p class="contact">Email: <a href="mailto:syclub7978@gmail.com">syclub7978@gmail.com</a></p>            </header>
+                <p class="contact">Email: <a href="mailto:syclub7978@gmail.com">syclub7978@gmail.com</a></p>
+                <nav class="view-tabs" role="tablist" aria-label="보기 전환">
+                    <button type="button" class="view-tab" role="tab" id="tab-portfolio" data-view="portfolio" aria-controls="view-portfolio" aria-selected="true">포트폴리오</button>
+                    <button type="button" class="view-tab" role="tab" id="tab-job" data-view="job" aria-controls="view-job" aria-selected="false" tabindex="-1">취업활동</button>
+                </nav>
+            </header>
 
             <main>
+                <div class="view" id="view-portfolio" role="tabpanel" aria-labelledby="tab-portfolio">
                 <section>
                     <h2 class="section-title">학력</h2>
                     <div class="card">
@@ -323,7 +330,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section id="sec-projects">
                     <h2 class="section-title">프로젝트 경험</h2>
 
                     <div class="card">
@@ -411,7 +418,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section id="sec-analysis">
                     <h2 class="section-title">이벤트 분석</h2>
 
                     <div class="card">
@@ -512,6 +519,9 @@
                         <a class="card-link" href="item-plan.html">기획서 보기 →</a>
                     </div>
                 </section>
+                </div>
+
+                <div class="view" id="view-job" role="tabpanel" aria-labelledby="tab-job" hidden></div>
 
                 <footer>
                     <p>© 2026 이지항. All rights reserved.</p>
@@ -520,5 +530,7 @@
         </div>
     </div>
 
+    <script src="job-data.js"></script>
+    <script src="job.js"></script>
 </body>
 </html>

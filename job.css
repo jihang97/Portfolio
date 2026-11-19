@@ -1,0 +1,505 @@
+/* 보기 전환 버튼 + 취업활동 화면 */
+:root {
+    --on-accent: #ffffff;
+    --c1: #4338ca;
+    --c2: #0f766e;
+    --c3: #b45309;
+    --c4: #be123c;
+    --c5: #475569;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --on-accent: #0e0f13;
+        --c1: #a5b4fc;
+        --c2: #5eead4;
+        --c3: #fbbf24;
+        --c4: #fb7185;
+        --c5: #94a3b8;
+    }
+}
+
+/* ---------- 전환 버튼 ---------- */
+.view-tabs {
+    display: flex;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.view-tab {
+    flex: 1;
+    appearance: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.view-tab:hover {
+    border-color: var(--accent-line);
+    color: var(--accent-color);
+}
+
+.view-tab[aria-selected="true"] {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--on-accent);
+}
+
+.view-tab:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.view[hidden] {
+    display: none;
+}
+
+/* ---------- 취업활동 화면 ---------- */
+.jb-head {
+    margin-bottom: 28px;
+}
+
+.jb-head h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+}
+
+.jb-head p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.jb-notice {
+    background-color: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 14px;
+    color: var(--text-body);
+    font-size: 0.88rem;
+}
+
+.jb-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px 22px;
+    min-width: 0;
+}
+
+.jb-card.wide {
+    grid-column: 1 / -1;
+}
+
+.jb-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.jb-card .jb-cap {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+}
+
+.jb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* KPI */
+.jb-kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.jb-kpi {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.jb-kpi .v {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-color);
+}
+
+.jb-kpi .v small {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-left: 2px;
+}
+
+.jb-kpi .l {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-body);
+}
+
+.jb-kpi .s {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.jb-kpi.is-real {
+    border-color: var(--accent-line);
+    background-color: var(--accent-soft);
+}
+
+/* 퍼널 */
+.jb-funnel {
+    display: grid;
+    gap: 10px;
+}
+
+.jb-frow {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr) 76px;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+}
+
+.jb-frow .name {
+    font-weight: 600;
+    color: var(--text-body);
+}
+
+.jb-track {
+    height: 22px;
+    background-color: var(--accent-soft);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.jb-fill {
+    height: 100%;
+    min-width: 3px;
+    background-color: var(--accent-color);
+    border-radius: 6px;
+}
+
+.jb-frow .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-body);
+}
+
+.jb-frow .num b {
+    color: var(--text-color);
+}
+
+/* 세로 막대 */
+.jb-vbars {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    height: 180px;
+    padding-top: 8px;
+}
+
+.jb-vbar {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.jb-vbar .val {
+    font-weight: 700;
+    color: var(--text-color);
+    font-variant-numeric: tabular-nums;
+}
+
+.jb-vbar .bar {
+    width: 100%;
+    max-width: 56px;
+    background-color: var(--accent-color);
+    border-radius: 6px 6px 0 0;
+    min-height: 3px;
+}
+
+/* 도넛 */
+.jb-donut {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.jb-donut svg {
+    width: 150px;
+    height: 150px;
+    flex: none;
+}
+
+.jb-donut .center-num {
+    font-size: 22px;
+    font-weight: 800;
+    fill: var(--text-color);
+}
+
+.jb-donut .center-lab {
+    font-size: 9px;
+    fill: var(--text-muted);
+}
+
+.jb-legend {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    flex: 1;
+    min-width: 130px;
+}
+
+.jb-legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 0;
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+.jb-legend li::before {
+    display: none;
+}
+
+.jb-legend .sw {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex: none;
+}
+
+.jb-legend .t {
+    flex: 1;
+    color: var(--text-body);
+}
+
+.jb-legend .n {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* 누적 선 */
+.jb-line svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.jb-line .grid {
+    stroke: var(--border-color);
+    stroke-width: 1;
+}
+
+.jb-line .area {
+    fill: var(--accent-soft);
+}
+
+.jb-line .path {
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.jb-line .dot {
+    fill: var(--card-bg);
+    stroke: var(--accent-color);
+    stroke-width: 2.5;
+}
+
+.jb-axis {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 히트맵 */
+.jb-heat {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px;
+}
+
+.jb-heat .days {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    align-items: center;
+}
+
+.jb-heat .cells {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 3px;
+}
+
+.jb-heat .cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background-color: var(--border-color);
+}
+
+.jb-heat .l1 { background-color: color-mix(in srgb, var(--accent-color) 25%, var(--card-bg)); }
+.jb-heat .l2 { background-color: color-mix(in srgb, var(--accent-color) 45%, var(--card-bg)); }
+.jb-heat .l3 { background-color: color-mix(in srgb, var(--accent-color) 70%, var(--card-bg)); }
+.jb-heat .l4 { background-color: var(--accent-color); }
+
+.jb-heatkey {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 10px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.jb-heatkey i {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    background-color: var(--border-color);
+    display: inline-block;
+}
+
+.jb-heatkey i.l1 { background-color: color-mix(in srgb, var(--accent-color) 25%, var(--card-bg)); }
+.jb-heatkey i.l2 { background-color: color-mix(in srgb, var(--accent-color) 45%, var(--card-bg)); }
+.jb-heatkey i.l3 { background-color: color-mix(in srgb, var(--accent-color) 70%, var(--card-bg)); }
+.jb-heatkey i.l4 { background-color: var(--accent-color); }
+
+/* 준비 달성도 */
+.jb-prog {
+    display: grid;
+    gap: 14px;
+}
+
+.jb-prow .top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    margin-bottom: 5px;
+}
+
+.jb-prow .top .t {
+    font-weight: 600;
+    color: var(--text-body);
+}
+
+.jb-prow .top .n {
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.jb-prow .top .n b {
+    color: var(--text-color);
+}
+
+/* 표 */
+.jb-table-wrap {
+    overflow-x: auto;
+}
+
+.jb-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 420px;
+}
+
+.jb-table th,
+.jb-table td {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-body);
+    white-space: nowrap;
+}
+
+.jb-table th {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.jb-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.jb-chip {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background-color: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    color: var(--accent-color);
+}
+
+.jb-chip.is-win {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--on-accent);
+}
+
+.jb-chip.is-off {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-muted);
+}
+
+/* 할 일 */
+.jb-todo li {
+    font-size: 0.92rem;
+}
+
+@media (max-width: 480px) {
+    .jb-card {
+        padding: 16px;
+    }
+
+    .jb-frow {
+        grid-template-columns: 70px minmax(0, 1fr) 64px;
+        gap: 8px;
+        font-size: 0.82rem;
+    }
+
+    .jb-vbars {
+        gap: 8px;
+    }
+}
